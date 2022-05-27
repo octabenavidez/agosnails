@@ -122,10 +122,12 @@ header a:hover{
     font-style: italic;
 }
 
-#nuestro-local h2{
+.borde{
+    text-align: center;
     border: 1px solid;
     display: inline-block;
     padding: 10px 15px;
+    margin: 10px;
 }
 
 #nuestro-local img{
@@ -159,20 +161,76 @@ header a:hover{
 #contactanos .iconos a img{
     width: 10%;
     margin: 0px 5px;
+    opacity: .5;
 }
 
+#contactanos .iconos a img:hover{
+    opacity: 1;
+}
 
 footer{
     text-align: center;
 }
 
+#mis-servicios .container{
+    display: flex;
+    flex-direction: column;
+}
+
+#mis-servicios .container .container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mis-servicios .container .container2 img{
+    width: 90%;
+    height: 90%;
+    max-width: 600px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px black;
+}
+
+#dueñas{
+    text-align: center;
+}
+
+#dueñas .container{
+    background-color: #ffa69e;
+    background-image: linear-gradient(315deg, #ffa69e 0%, #5d4954 74%);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+
+#dueñas .container h1{
+    padding: 20px 0px;
+    margin: 0;
+    transition: 2s;
+}
+
+#dueñas .container h1:hover{
+    color: #FFCFB0;
+}
+
+#dueñas .container img{
+    width: 85%;
+    border-radius: 10px;
+}
+
+
+.wow{
+    z-index: 0;
+}
 
 @media (min-width: 728px){
     header{
         position: sticky;
         top: 0;
-        height: 20vh;
         width: 100%;
+        z-index: 1;
     }
     header .logo{
         padding: 0px 20px;
@@ -193,10 +251,22 @@ footer{
         width: 40px;
         margin: 0px 5px;
     }
+    #dueñas .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (min-width: 1000px){
     .nuestro-local__cartaContenedor{
         flex-direction: row;
+    }
+    #mis-servicios .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #mis-servicios .container .container2{
+        flex-direction: column-reverse;
+        justify-content: space-between;
     }
 }
